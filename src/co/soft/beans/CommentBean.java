@@ -5,7 +5,7 @@ import javax.validation.constraints.Size;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class CommentBean {
+public class CommentBean {// 아무거나 아무거나 쓴다
 
 	
 	private int t_com_no;
