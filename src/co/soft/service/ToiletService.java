@@ -16,8 +16,8 @@ public class ToiletService {
 	ToiletDao t_dao;
 	
 	
-	public List<ToiletBean> getToiletBeans(){
+	public List<ToiletBean> getToiletBeans(String searchKey){
 		RowBounds row=new RowBounds(0,5);
-		return t_dao.getToiletBean(row);
+		return t_dao.getToiletBean(row, searchKey);
 	}
 }

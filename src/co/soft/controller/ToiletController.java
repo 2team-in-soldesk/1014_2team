@@ -2,6 +2,8 @@ package co.soft.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,8 +21,9 @@ public class ToiletController {
 	ToiletService t_service;
 	
 	@GetMapping("/list")
-	public String list(Model model) {
-		List<ToiletBean> li=t_service.getToiletBeans();
+	public String list(Model model, HttpServletRequest request ) {
+		String searchKey=request.getParameter("searchKey");
+		List<ToiletBean> li=t_service.getToiletBeans(searchKey);
 		model.addAttribute("li", li);
 		return "toilet/list";
 	}

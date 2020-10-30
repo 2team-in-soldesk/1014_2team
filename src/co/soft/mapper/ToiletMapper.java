@@ -10,6 +10,6 @@ import co.soft.beans.ToiletBean;
 
 public interface ToiletMapper {
 
-	@Select("select * from toilet")
-	List<ToiletBean> getToiletBean(RowBounds row);
+	@Select("select * from toilet where t_nm_name like '%'||#{searchKey}||'%' or t_m_name like '%'||#{searchKey}||'%'")
+	List<ToiletBean> getToiletBean(RowBounds row, String searchKey);
 }
