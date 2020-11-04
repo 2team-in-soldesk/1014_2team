@@ -14,4 +14,10 @@ public interface UserMapper {
 	
 	@Select("select * from t_user")
 	public List<UserBean> getUser();
+	
+	@Select("select t_user_id from t_user")
+	public List<String> getId();
+
+	@Select("select t_user_pw from t_user")
+	public List<String> getPw();
 }

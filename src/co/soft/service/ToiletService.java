@@ -17,7 +17,14 @@ public class ToiletService {
 	
 	
 	public List<ToiletBean> getToiletBeans(String searchKey){
-		RowBounds row=new RowBounds(0,5);
-		return t_dao.getToiletBean(row, searchKey);
+		return t_dao.getToiletBean(searchKey);
+	}
+	
+	public ToiletBean getOneToilet(int t_no) {
+		return t_dao.getOneToilet(t_no);
+	}
+	
+	public int getToiletCount(String searchKey) {
+		return t_dao.getToiletCount(searchKey);
 	}
 }

@@ -10,13 +10,25 @@
 </head>
 <body>
 
+<script type="text/javascript">
+window.onload=function(){
+	var id=document.form.t_user_id;
+	var login=document.getElementById("login");
+	if(id.value.length>=2){
+		login.innerHTML="로그아웃";
+		login.href="${root}user/logout";
+	}
+}
+</script>
 
 
 <a href="${root }user/join">가입</a><br>
 <a href="${root }user/select">회원조회</a><br>
+<a id="login" href="${root }user/login">로그인</a><br>
 
-<form action="${root }toilet/list" method="get">
+<form name="form" action="${root }toilet/list" method="get">
 <input name="searchKey">
+<input type="hidden" name="t_user_id" value="${t_user_id }">
 <input type="submit" value="화장실검색">
 </form>
 

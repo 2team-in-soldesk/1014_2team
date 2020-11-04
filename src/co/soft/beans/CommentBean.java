@@ -25,6 +25,9 @@ public class CommentBean {
 	
 	private String t_com_date;
 
+	//프로필 이미지 선택
+	private String t_com_profileimg;
+
 	public int getT_com_no() {
 		return t_com_no;
 	}
@@ -79,6 +82,14 @@ public class CommentBean {
 
 	public void setT_com_date(String t_com_date) {
 		this.t_com_date = t_com_date;
+	}
+	
+	public String getT_com_profileimg() {
+		return t_com_profileimg;
+	}
+	
+	public void setT_com_profileimg(String t_com_profileimg) {
+		this.t_com_profileimg = t_com_profileimg;
 	}
 	
 	

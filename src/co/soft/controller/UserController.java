@@ -2,6 +2,7 @@ package co.soft.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.apache.catalina.User;
@@ -45,4 +46,27 @@ public class UserController {
 		model.addAttribute("li",li);
 		return "user/select";
 	}
+	
+	@GetMapping("/login")
+	public String login() {
+		return "user/login";
+	}
+	
+	@PostMapping("/loginpass")
+	public String loginpass(HttpServletRequest request) {
+		String id=request.getParameter("t_user_id");
+		String pw=request.getParameter("t_user_pw");
+		List<String> id_list=userservice.getId();
+		List<String> pw_list=userservice.getPw();
+		if(id_list.contains(id)&&pw_list.contains(pw)) {
+			request.setAttribute("t_user_id",id);
+			return "user/loginpass";
+		}return "user/loginfail";
+	}
+	
+	@GetMapping("/logout")
+	public String logout() {
+		return "user/logout";
+	}
+	
 }

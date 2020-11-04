@@ -21,4 +21,12 @@ public class UserService {
 	public List<UserBean> getUser(){
 		return userdao.getUser();
 	}
+
+	public List<String> getId(){
+		return userdao.getId();
+	}
+	
+	public List<String> getPw(){
+		return userdao.getPw();
+	}
 }

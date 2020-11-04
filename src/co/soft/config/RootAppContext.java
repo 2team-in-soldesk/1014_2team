@@ -6,7 +6,7 @@ import org.springframework.web.context.annotation.SessionScope;
 
 
 @Configuration
-//bean을 정의하는 클래스ㅁㅁㅁㅁㅁ
+//bean을 정의하는 클래스
 public class RootAppContext {
 	
 	

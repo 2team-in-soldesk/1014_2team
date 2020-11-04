@@ -7,8 +7,8 @@ public class ToiletBean {
 	private String t_nm_name;
 	private String t_m_name;
 	private String t_mwm;
-	private int t_ml;
-	private int t_ms;
+	private int t_ml_number;
+	private int t_ms_number;
 	private int t_hml_number;
 	private int t_hms_number;
 	private int t_cml_number;
@@ -24,7 +24,6 @@ public class ToiletBean {
 	private String t_data;
 	private String t_mcode;
 	private String t_service;
-	
 	public int getT_no() {
 		return t_no;
 	}
@@ -55,17 +54,17 @@ public class ToiletBean {
 	public void setT_mwm(String t_mwm) {
 		this.t_mwm = t_mwm;
 	}
-	public int getT_ml() {
-		return t_ml;
+	public int getT_ml_number() {
+		return t_ml_number;
 	}
-	public void setT_ml(int t_ml) {
-		this.t_ml = t_ml;
+	public void setT_ml_number(int t_ml_number) {
+		this.t_ml_number = t_ml_number;
 	}
-	public int getT_ms() {
-		return t_ms;
+	public int getT_ms_number() {
+		return t_ms_number;
 	}
-	public void setT_ms(int t_ms) {
-		this.t_ms = t_ms;
+	public void setT_ms_number(int t_ms_number) {
+		this.t_ms_number = t_ms_number;
 	}
 	public int getT_hml_number() {
 		return t_hml_number;
@@ -158,6 +157,6 @@ public class ToiletBean {
 		this.t_service = t_service;
 	}
 	
-	
+
 	
 }

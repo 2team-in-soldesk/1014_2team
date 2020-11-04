@@ -21,4 +21,12 @@ public class UserDao {
 	public List<UserBean> getUser(){
 		return usermapper.getUser();
 	}
+	
+	public List<String> getId(){
+		return usermapper.getId();
+	}
+	
+	public List<String> getPw(){
+		return usermapper.getPw();
+	}
 }

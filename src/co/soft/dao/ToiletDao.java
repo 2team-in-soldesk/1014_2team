@@ -15,7 +15,15 @@ public class ToiletDao {
 	@Autowired
 	private ToiletMapper t_mapper;
 	
-	public List<ToiletBean> getToiletBean(RowBounds row,String searchKey){
-		return t_mapper.getToiletBean(row,searchKey);
+	public List<ToiletBean> getToiletBean(String searchKey){
+		return t_mapper.getToiletBean(searchKey);
+	}
+	
+	public ToiletBean getOneToilet(int t_no) {
+		return t_mapper.getOneToilet(t_no);
+	}
+	
+	public int getToiletCount(String searchKey) {
+		return t_mapper.getToiletCount(searchKey);
 	}
 }
