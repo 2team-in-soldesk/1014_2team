@@ -45,6 +45,7 @@ window.onload=function(){
 <!----------- 로그인 하면 뜨는 링크------------->
 <c:if test="${not empty t_user_id}">
 
+<a id="login" href="${root }user/login">로그인</a><br>
 <a href="${root }user/user_update?t_user_id=${t_user_id}">정보수정</a><br>
 <a href="${root }user/user_delete?t_user_id=${t_user_id}">탈퇴</a><br>
 
