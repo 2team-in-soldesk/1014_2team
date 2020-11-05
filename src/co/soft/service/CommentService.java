@@ -25,4 +25,16 @@ public class CommentService {
 	public int getCommentCount(int t_no) {
 		return c_dao.getCommentCount(t_no);
 	}
+	
+	public void deleteComment(int t_com_no) {
+		c_dao.deleteComment(t_com_no);
+	}
+	
+	public CommentBean getOneComment(int t_com_no) {
+		return c_dao.getOneComment(t_com_no);
+	}
+	
+	public void updateComment(CommentBean commentbean) {
+		c_dao.updateComment(commentbean);
+	}
 }

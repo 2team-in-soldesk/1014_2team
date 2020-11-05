@@ -29,4 +29,12 @@ public class UserService {
 	public List<String> getPw(){
 		return userdao.getPw();
 	}
+	
+	public UserBean getOneUserbean(String t_user_id) {
+		return userdao.getOneUserbean(t_user_id);
+	}
+	
+	public void deleteUser(String t_user_id) {
+		userdao.deleteUser(t_user_id);
+	}
 }

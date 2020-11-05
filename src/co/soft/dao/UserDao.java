@@ -29,4 +29,12 @@ public class UserDao {
 	public List<String> getPw(){
 		return usermapper.getPw();
 	}
+	
+	public UserBean getOneUserbean(String t_user_id) {
+		return usermapper.getOneUserbean(t_user_id);
+	}
+	
+	public void deleteUser(String t_user_id) {
+		usermapper.deleteUser(t_user_id);
+	}
 }

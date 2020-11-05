@@ -69,4 +69,34 @@ public class UserController {
 		return "user/logout";
 	}
 	
+	@GetMapping("/user_delete")
+	public String delete(HttpServletRequest request) {
+		String t_user_id=request.getParameter("t_user_id");
+		request.setAttribute("t_user_id",t_user_id);
+		return "user/user_delete";
+	}
+	
+	@PostMapping("/user_deletepass")
+	public String deletepass(HttpServletRequest request, UserBean userbean) {
+		String t_user_id=request.getParameter("t_user_id");
+		
+		// 사용자가 입력한 비밀번호 가져옴
+		String t_user_pw=request.getParameter("t_user_pw");
+		
+		//전달된 아이디로 해당 유저의 데이터 가져와 객체에 저장
+		userbean=userservice.getOneUserbean(t_user_id);
+		//id로 얻어낸 디비값에 있는 비번과 사용자가 입력한 비번 비교
+		if(userbean.getT_user_pw().equals(t_user_pw)) {
+			// 비번 일치시 데이터 삭제 후 deletepass로 이동
+			userservice.deleteUser(t_user_id);
+			return "user/user_deletepass";
+		}else {
+			// 비번 불일치시 다시 탈퇴폼으로 이동
+			request.setAttribute("t_user_id",t_user_id);
+			return "user/user_delete_fail";
+		}
+		
+		
+	}
+	
 }

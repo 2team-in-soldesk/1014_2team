@@ -17,7 +17,16 @@
 alt="${c.t_com_profileimg }" width="50" height="50">
 ${c.t_com_no} / ${c.t_user_id } / ${c.t_com_score } /
 ${c.t_com_com } /
-${c.t_com_date }
+${c.t_com_date }/ ${t_no }
+
+<!-------로그인한 아이디가 작성한 코멘트만 수정 삭제 버튼 보이게 설정--------->
+<c:if test="${t_user_id eq c.t_user_id}">
+
+<button onclick="location.href='${root}comment/com_update?t_user_id=${c.t_user_id}&t_com_no=${c.t_com_no }&t_no=${t_no }'">코멘트수정</button>
+<button onclick="location.href='${root}comment/com_delete?t_user_id=${c.t_user_id}&t_com_no=${c.t_com_no }&t_no=${t_no }'">코멘트삭제</button>
+
+</c:if>
+
 <br>
 </c:forEach>
 
@@ -61,6 +70,16 @@ for(var i=0;i<page.length;i++){
 	}
 
 }
+
+
+// 코멘트 삭제 함수. true이면 삭제실행
+/* function del(a){
+	var con=confirm("후기를 삭제하시겠습니까?");
+	
+	if(con==true){
+		location.href="${root}comment/com_delete?t_user_id=${c.t_user_id} ";
+	}
+} */
 
 </script>
 

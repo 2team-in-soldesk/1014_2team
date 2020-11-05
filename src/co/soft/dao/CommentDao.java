@@ -25,4 +25,16 @@ public class CommentDao {
 	public int getCommentCount(int t_no) {
 		return c_mapper.getCommentCount(t_no);
 	}
+	
+	public void deleteComment(int t_com_no) {
+		c_mapper.deleteComment(t_com_no);
+	}
+	
+	public CommentBean getOneComment(int t_com_no) {
+		return c_mapper.getOneComment(t_com_no);
+	}
+	
+	public void updateComment(CommentBean commentbean) {
+		c_mapper.updateComment(commentbean);
+	}
 }

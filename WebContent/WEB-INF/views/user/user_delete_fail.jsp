@@ -11,8 +11,9 @@
 <body>
 
 <script type="text/javascript">
-alert("등록되었습니다");
-location.href="${root}main";
+alert("비밀번호 불일치");
+location.href="${root}user/user_delete?t_user_id=${t_user_id}";
+
 </script>
 
 </body>

@@ -1,5 +1,6 @@
 package co.soft.beans;
 
+// 3
 public class PageNumBean {
 
 	// 리스트 띄울때 반복분 시작번호
@@ -62,15 +63,20 @@ public class PageNumBean {
 		page_num_min=current_page_num-2;
 		if((current_page_num-2)<1) {
 			page_num_min=1;
+		}else if((current_page_num-2)>=1 && current_page_num>page_count-2) {
+			// 페이지가 여러개일때 마지막 페이지를 클릭해도 5개가 모두 출력되도록 정의
+			page_num_min=page_count-4;
 		}
+		
 		
 		// 페이지 최대값을 현재 페이지+2;
 		page_num_max=current_page_num+2;
-		if((current_page_num+2)<5) {
-			page_num_max=5;
-			
-		}else if((current_page_num+2)>page_count||page_count<5) {
+		if(page_count<5||(current_page_num+2)>page_count) {
 			page_num_max=page_count;
+			
+		}else if(page_count>=5 && current_page_num<3) {
+			// 페이지가 5개 이상일때 1페이지를 클릭해도 한 화면에 5개까지 뜨게 셋팅
+			page_num_max=5;
 		}
 		
 		// 첫 페이지는 1, 마지막 페이지는 페이지의 끝번호(page_count)

@@ -27,9 +27,14 @@ public class CommentController {
 	
 	@GetMapping("/commentlist")
 	public String commentlist(HttpServletRequest request,
-			Model model,
-			@ModelAttribute(value="commentbean") CommentBean commentbean) {
+			Model model
+			/*@ModelAttribute(value="commentbean") CommentBean commentbean*/
+			) {
 		
+		// id РќДо
+		String t_user_id=request.getParameter("t_user_id");
+		model.addAttribute("t_user_id",t_user_id);
+		////////////////////
 		int t_no=Integer.parseInt(request.getParameter("t_no"));
 		
 		String current_page_num=request.getParameter("current_page_num");
@@ -48,6 +53,7 @@ public class CommentController {
 		List<CommentBean> li=c_service.getComment(t_no); 
 		model.addAttribute("li",li);
 		model.addAttribute("t_no",t_no);
+		
 		return "comment/commentlist";
 	}
 	
@@ -70,6 +76,71 @@ public class CommentController {
 		request.setAttribute("t_no",t_no);
 		c_service.addcomment(commentbean);
 		return "comment/add_comment";
+	}
+	
+	@GetMapping("/com_delete")
+	public String com_delete(HttpServletRequest request) {
+		String t_user_id=request.getParameter("t_user_id");
+		String t_com_no=request.getParameter("t_com_no");
+		String t_no=request.getParameter("t_no");
+		
+		request.setAttribute("t_user_id",t_user_id);
+		request.setAttribute("t_com_no",t_com_no);
+		request.setAttribute("t_no",t_no);
+		
+		System.out.println(t_user_id+" "+t_com_no+" "+t_no);
+		
+		return "comment/com_delete";
+	}
+	
+	@GetMapping("/com_deletepass")
+	public String com_deletepass(HttpServletRequest request) {
+		String t_user_id=request.getParameter("t_user_id");
+		String t_com_no=request.getParameter("t_com_no");
+		String t_no=request.getParameter("t_no");
+		
+		request.setAttribute("t_user_id",t_user_id);
+		request.setAttribute("t_com_no",t_com_no);
+		request.setAttribute("t_no",t_no);
+		
+		System.out.println(t_user_id+" "+t_com_no+" "+t_no);
+		
+		c_service.deleteComment(Integer.parseInt(t_com_no));
+		return "comment/com_deletepass";
+	}
+	
+	@GetMapping("/com_update")
+	public String com_update(HttpServletRequest request, 
+			CommentBean commentbean) {
+		
+		String t_com_no=request.getParameter("t_com_no");
+		String t_no=request.getParameter("t_no");
+		
+		request.setAttribute("t_no",t_no);
+		
+		commentbean=c_service.getOneComment(Integer.parseInt(t_com_no));
+		request.setAttribute("commentbean",commentbean);
+		
+		return "comment/com_update";
+	}
+	
+	@PostMapping("/com_updatepass")
+	public String com_updatepass(CommentBean commentbean,
+			HttpServletRequest request) {
+		String t_com_no=request.getParameter("t_com_no");
+		commentbean=c_service.getOneComment(Integer.parseInt(t_com_no));
+		
+		String t_com_profileimg=request.getParameter("t_com_profileimg");
+		String t_com_score=request.getParameter("t_com_score");
+		String t_com_com=request.getParameter("t_com_com");
+		
+		commentbean.setT_com_com(t_com_com);
+		commentbean.setT_com_profileimg(t_com_profileimg);
+		commentbean.setT_com_score(Integer.parseInt(t_com_score));
+		
+		request.setAttribute("commentbean",commentbean);
+		c_service.updateComment(commentbean);
+		return "comment/com_updatepass";
 	}
 	
 }
