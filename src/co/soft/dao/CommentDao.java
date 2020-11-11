@@ -41,5 +41,9 @@ public class CommentDao {
 	public void updateComment(CommentBean commentbean) {
 		c_mapper.updateComment(commentbean);
 	}
+	
+	public void deleteCommentAll(String t_user_id) {
+		c_mapper.deleteCommentAll(t_user_id);
+	}
 
 }

@@ -57,10 +57,6 @@ public interface UserMapper {
 	////////////////////////////////////////////////////////////////////
 	
 	
-	//회원 전체보기(가입등록된거 확인하려고 만든쿼리문-테스트)
-	@Select("select * from t_user")
-	public List<UserBean> getUser();
-	
 	// id 가져오는 쿼리
 	@Select("select t_user_id from t_user")
 	public List<String> getId();

@@ -78,6 +78,7 @@ public class CommentController {
 		commentbean.setT_com_profileimg(profileimg);
 		request.setAttribute("t_no",t_no);
 		c_service.addcomment(commentbean);
+		
 		t_service.updateToiletScore(commentbean);
 		t_service.updateToiletUserPlus(Integer.parseInt(t_no));
 		return "comment/add_comment";
@@ -109,6 +110,7 @@ public class CommentController {
 		request.setAttribute("t_no",t_no);
 		
 		c_service.deleteComment(Integer.parseInt(t_com_no));
+		
 		return "comment/com_deletepass";
 	}
 	

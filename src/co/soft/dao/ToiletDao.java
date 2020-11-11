@@ -44,4 +44,5 @@ public class ToiletDao {
 	public List<ToiletBean> getToiletBeanGps(Gpsbean gps){
 		return t_mapper.getToiletBeanGps(gps);
 	}
+	
 }

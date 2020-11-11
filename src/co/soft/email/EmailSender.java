@@ -17,7 +17,7 @@ public class EmailSender {
     
     public void sendEmail(UserBean userbean) throws Exception{
         //메일 발송 기능 제공
-       String host="http://localhost:8080/Toilet35_2/user/";
+       String host="http://localhost:8080/Toilet35_3/user/";
        MimeMessage msg = mailSender.createMimeMessage();
        String content= "다음 링크에 접속하여 이메일을 확인해 주세요" +"<a href='"+
                host + "EmailCheckAction?code=" + 

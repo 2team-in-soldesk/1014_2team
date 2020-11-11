@@ -39,4 +39,8 @@ public interface CommentMapper {
 	@Update("update t_comment set t_com_com=#{t_com_com}, t_com_score=#{t_com_score}, t_com_profileimg=#{t_com_profileimg} where t_com_no=#{t_com_no}")
 	void updateComment(CommentBean commentbean);
 	
+	//회원탈퇴시 작성한 코멘트 모두 삭제하는 쿼리
+	@Delete("delete from t_comment where t_user_id=#{t_user_id}")
+	void deleteCommentAll(String t_user_id);
+	
 }

@@ -19,10 +19,6 @@ public class UserService {
 		userdao.insertUser(userbean);
 	}
 
-	public List<UserBean> getUser() {
-		return userdao.getUser();
-	}
-
 	public List<String> getId() {
 		return userdao.getId();
 	}

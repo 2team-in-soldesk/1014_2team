@@ -41,5 +41,9 @@ public class CommentService {
 	public void updateComment(CommentBean commentbean) {
 		c_dao.updateComment(commentbean);
 	}
+	
+	public void deleteCommentAll(String t_user_id) {
+		c_dao.deleteCommentAll(t_user_id);
+	}
 
 }

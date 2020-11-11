@@ -19,10 +19,6 @@ public class UserDao {
 		usermapper.insertUser(userbean);
 	}
 
-	public List<UserBean> getUser() {
-		return usermapper.getUser();
-	}
-
 	public List<String> getId() {
 		return usermapper.getId();
 	}

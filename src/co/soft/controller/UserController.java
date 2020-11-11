@@ -25,6 +25,7 @@ import co.soft.email.EmailSender;
 import co.soft.email.EmailSenderPw;
 import co.soft.email.SHA256;
 import co.soft.service.CommentService;
+import co.soft.service.ToiletService;
 import co.soft.service.UserService;
 
 @Controller
@@ -42,6 +43,9 @@ public class UserController {
 
 	@Autowired
 	CommentService c_service;
+	
+	@Autowired
+	ToiletService t_service;
 
 	@GetMapping("/join")
 	public String userJoin(@ModelAttribute("userbean") UserBean userbean) {
@@ -149,15 +153,6 @@ public class UserController {
 	      }
 	   }
 	   
-	   
-	   
-	   
-	@GetMapping("/select")
-	public String userSelect(Model model) {
-		List<UserBean> li = userservice.getUser();
-		model.addAttribute("li", li);
-		return "user/select";
-	}
 
 	@GetMapping("/login")
 	public String login() {
@@ -249,7 +244,9 @@ public class UserController {
 		if (pw_check_code.equals("delete")) {
 
 			if (userbean.getT_user_pw().equals(t_user_pw)) {
+				c_service.deleteCommentAll(t_user_id);
 				userservice.deleteUser(t_user_id);
+				
 				check_result = "user/pw_check_pass";
 			} else {
 				check_result = "user/pw_check_fail";

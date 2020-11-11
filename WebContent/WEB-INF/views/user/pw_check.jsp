@@ -26,7 +26,7 @@
 	crossorigin="anonymous"></script>
 <script type="text/javascript">
 	function del() {
-		var a = confirm("정말 탈퇴하시겠습니까?");
+		var a = confirm("탈퇴시 작성한 후기는 모두 삭제됩니다. 정말 탈퇴하시겠습니까?");
 		if (a == true) {
 			return true;
 		} else {
