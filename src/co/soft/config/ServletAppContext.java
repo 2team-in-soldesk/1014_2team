@@ -30,6 +30,7 @@ import co.soft.mapper.UserMapper;
 @ComponentScan("co.soft.controller")
 @ComponentScan("co.soft.dao")
 @ComponentScan("co.soft.service")
+@ComponentScan("co.soft.email") // 이메일 패키지 생성
 @PropertySource("/WEB-INF/pro/db.properties") // 프로퍼티 등록
 public class ServletAppContext implements WebMvcConfigurer {
 	@Value("${db.classname}")
@@ -107,11 +108,6 @@ public class ServletAppContext implements WebMvcConfigurer {
 		return new StandardServletMultipartResolver();
 	}
 
-	// properties파일을 message로 등록한다.
-	/*
-	 * @Bean public ReloadableResourceBundleMessageSource messageSource() {
-	 * ReloadableResourceBundleMessageSource res = new
-	 * ReloadableResourceBundleMessageSource(); res.setBasenames("/WEB-INF/pro/db");
-	 * return res; }
-	 */
+
+	 
 }

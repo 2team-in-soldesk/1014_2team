@@ -19,11 +19,13 @@ public class ToiletBean {
 	private String t_manage;
 	private String t_tel ;
 	private String t_close;
-	private int t_la;
-	private int t_lo;
+	private double t_la;
+	private double t_lo;
 	private String t_data;
 	private String t_mcode;
 	private String t_service;
+	private int t_com_score;
+	private int t_user_count;
 	public int getT_no() {
 		return t_no;
 	}
@@ -126,16 +128,16 @@ public class ToiletBean {
 	public void setT_close(String t_close) {
 		this.t_close = t_close;
 	}
-	public int getT_la() {
+	public double getT_la() {
 		return t_la;
 	}
-	public void setT_la(int t_la) {
+	public void setT_la(double t_la) {
 		this.t_la = t_la;
 	}
-	public int getT_lo() {
+	public double getT_lo() {
 		return t_lo;
 	}
-	public void setT_lo(int t_lo) {
+	public void setT_lo(double t_lo) {
 		this.t_lo = t_lo;
 	}
 	public String getT_data() {
@@ -156,7 +158,20 @@ public class ToiletBean {
 	public void setT_service(String t_service) {
 		this.t_service = t_service;
 	}
-	
+	public int getT_com_score() {
+		return t_com_score;
+	}
+	public void setT_com_score(int t_com_score) {
+		this.t_com_score = t_com_score;
+	}
+	public int getT_user_count() {
+		return t_user_count;
+	}
+	public void setT_user_count(int t_user_count) {
+		this.t_user_count = t_user_count;
+	}
 
+
+	
 	
 }

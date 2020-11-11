@@ -26,6 +26,10 @@ public class CommentDao {
 		return c_mapper.getCommentCount(t_no);
 	}
 	
+	public int getUserCommentCount(String t_user_id) {
+		return c_mapper.getUserCommentCount(t_user_id);
+	}
+	
 	public void deleteComment(int t_com_no) {
 		c_mapper.deleteComment(t_com_no);
 	}
@@ -37,4 +41,5 @@ public class CommentDao {
 	public void updateComment(CommentBean commentbean) {
 		c_mapper.updateComment(commentbean);
 	}
+
 }

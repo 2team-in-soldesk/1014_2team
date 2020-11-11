@@ -26,6 +26,10 @@ public class CommentService {
 		return c_dao.getCommentCount(t_no);
 	}
 	
+	public int getUserCommentCount(String t_user_id) {
+		return c_dao.getUserCommentCount(t_user_id);
+	}
+	
 	public void deleteComment(int t_com_no) {
 		c_dao.deleteComment(t_com_no);
 	}
@@ -37,4 +41,5 @@ public class CommentService {
 	public void updateComment(CommentBean commentbean) {
 		c_dao.updateComment(commentbean);
 	}
+
 }

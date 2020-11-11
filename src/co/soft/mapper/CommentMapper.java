@@ -16,12 +16,16 @@ public interface CommentMapper {
 	List<CommentBean> getComment(int t_no);
 	
 	// 코멘트 추가
-	@Insert("insert into t_comment values(t_com_seq.nextval,#{t_com_profileimg} ,#{t_user_id}, #{t_no},#{t_com_score},#{t_com_com}, null,sysdate)")
+	@Insert("insert into t_comment values(t_com_seq.nextval,#{t_com_profileimg} ,#{t_user_id}, #{t_no},#{t_com_score},#{t_com_com}, sysdate)")
 	void addcomment(CommentBean c_bean);
 	
-	// 등록된 후기의 총 개수 구하는 쿼리문
+	// 등록된 후기의 총 개수 구하는 쿼리문(화장실기준)
 	@Select("select count(*) from t_comment where t_no=#{t_no}")
 	int getCommentCount(int t_no);	
+	
+	// 등록된 후기의 총 개수 구하는 쿼리문(내가 작성한 코멘트개수)
+	@Select("select count(*) from t_comment where t_user_id=#{t_user_id}")
+	int getUserCommentCount(String t_user_id);
 	
 	// 코멘트 삭제
 	@Delete("delete from t_comment where t_com_no=#{t_com_no}")

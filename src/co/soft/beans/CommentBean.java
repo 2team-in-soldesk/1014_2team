@@ -21,8 +21,6 @@ public class CommentBean {
 	@Size(min=2,max=100,message = "코멘트는  2~100글자 이내로 작성해주세요.")
 	private String t_com_com;
 	
-	private MultipartFile t_com_photo;
-	
 	private String t_com_date;
 
 	//프로필 이미지 선택
@@ -68,14 +66,6 @@ public class CommentBean {
 		this.t_com_com = t_com_com;
 	}
 
-	public MultipartFile getT_com_photo() {
-		return t_com_photo;
-	}
-
-	public void setT_com_photo(MultipartFile t_com_photo) {
-		this.t_com_photo = t_com_photo;
-	}
-
 	public String getT_com_date() {
 		return t_com_date;
 	}
@@ -83,15 +73,13 @@ public class CommentBean {
 	public void setT_com_date(String t_com_date) {
 		this.t_com_date = t_com_date;
 	}
-	
+
 	public String getT_com_profileimg() {
 		return t_com_profileimg;
 	}
-	
+
 	public void setT_com_profileimg(String t_com_profileimg) {
 		this.t_com_profileimg = t_com_profileimg;
 	}
-	
-	
-	
+
 }

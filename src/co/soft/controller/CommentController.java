@@ -16,7 +16,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import co.soft.beans.CommentBean;
 import co.soft.beans.PageNumBean;
+import co.soft.beans.ToiletBean;
 import co.soft.service.CommentService;
+import co.soft.service.ToiletService;
 
 @Controller
 @RequestMapping(value="/comment")
@@ -25,11 +27,12 @@ public class CommentController {
 	@Autowired
 	private CommentService c_service;
 	
+	@Autowired
+	private ToiletService t_service;
+	
 	@GetMapping("/commentlist")
 	public String commentlist(HttpServletRequest request,
-			Model model
-			/*@ModelAttribute(value="commentbean") CommentBean commentbean*/
-			) {
+			Model model) {
 		
 		// id 전달
 		String t_user_id=request.getParameter("t_user_id");
@@ -75,6 +78,8 @@ public class CommentController {
 		commentbean.setT_com_profileimg(profileimg);
 		request.setAttribute("t_no",t_no);
 		c_service.addcomment(commentbean);
+		t_service.updateToiletScore(commentbean);
+		t_service.updateToiletUserPlus(Integer.parseInt(t_no));
 		return "comment/add_comment";
 	}
 	
@@ -88,7 +93,7 @@ public class CommentController {
 		request.setAttribute("t_com_no",t_com_no);
 		request.setAttribute("t_no",t_no);
 		
-		System.out.println(t_user_id+" "+t_com_no+" "+t_no);
+		t_service.updateToiletUserMinus(Integer.parseInt(t_no));
 		
 		return "comment/com_delete";
 	}
@@ -102,8 +107,6 @@ public class CommentController {
 		request.setAttribute("t_user_id",t_user_id);
 		request.setAttribute("t_com_no",t_com_no);
 		request.setAttribute("t_no",t_no);
-		
-		System.out.println(t_user_id+" "+t_com_no+" "+t_no);
 		
 		c_service.deleteComment(Integer.parseInt(t_com_no));
 		return "comment/com_deletepass";
@@ -134,12 +137,41 @@ public class CommentController {
 		String t_com_score=request.getParameter("t_com_score");
 		String t_com_com=request.getParameter("t_com_com");
 		
+		int score=0;
+		if(t_com_score==null) {
+			score=0;
+		}else if(t_com_score=="") {
+			score=0;
+		}else {
+			score=Integer.parseInt(t_com_score);
+		}
+		
 		commentbean.setT_com_com(t_com_com);
 		commentbean.setT_com_profileimg(t_com_profileimg);
-		commentbean.setT_com_score(Integer.parseInt(t_com_score));
+		commentbean.setT_com_score(score);
+		
+		System.out.println(score);
 		
 		request.setAttribute("commentbean",commentbean);
 		c_service.updateComment(commentbean);
+		
+		// addval=별점의 총점을 변경해줄 변수
+		// 화장실 별점 변경시 toilet 테이블의 별점 총점도 변경해줌
+		String addval=request.getParameter("addval");
+		int add=0;
+		if(addval==null||addval=="") {
+			add=0;
+			
+		}else {
+			add=Integer.parseInt(addval);
+		}
+		
+		CommentBean c=new CommentBean();
+		c.setT_com_score(add);
+		c.setT_no(commentbean.getT_no());
+		t_service.updateToiletScore(c);
+
+
 		return "comment/com_updatepass";
 	}
 	

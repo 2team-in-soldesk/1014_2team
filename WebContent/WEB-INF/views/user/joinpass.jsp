@@ -11,7 +11,6 @@
 <body>
 
 <script type="text/javascript">
-alert("등록되었습니다");
 location.href="${root}main";
 </script>
 

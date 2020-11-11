@@ -12,8 +12,9 @@
 </head>
 <body>
 <script type="text/javascript">
-alert("아이디, 비번 불일치!!")
-location.href="${root}user/login";
+var a='${loginfailmsg}';
+alert(a);
+location.href="${root}main";
 </script>
 </body>
 </html>
