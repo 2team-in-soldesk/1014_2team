@@ -31,7 +31,7 @@ public class EmailSenderPw {
     public void sendEmail(UserBean userbean) throws Exception{
         //메일 발송 기능 제공
        String tempassword="";
-       String host="http://localhost:8080/Toilet35_3/user/";
+       String host="http://localhost:8080/10142team/user/";
         MimeMessage msg = mailSender.createMimeMessage();
         msg.setSubject("지푸라기 비밀번호 인증번호입니다."); //메일 제목
         msg.setText("임시비밀번호는 " + 
