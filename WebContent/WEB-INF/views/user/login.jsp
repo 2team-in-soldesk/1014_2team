@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -41,8 +41,8 @@
 .sidebar>form>#btn2 {
 	margin-top: 5%;
 	margin-left: 5%;
-	color: ivory;
-	background-color: darkturquoise;
+	color: rgb(56,56,56);
+	background-color: rgb(74, 211, 188);
 	border: 1px solid rgb(63, 180, 176);
 	/* background-color:rgb(49, 191, 238);
     border: 1px solid rgb(63, 180, 176); */
@@ -55,8 +55,8 @@
 	margin-left: 15%;
 	width: 30%;
 	height: 55px;
-	color: ivory;
-	background-color: darkturquoise;
+	color: rgb(56,56,56);
+	background-color: rgb(74, 211, 188);
 	border: 1px solid rgb(63, 180, 176);
 }
 

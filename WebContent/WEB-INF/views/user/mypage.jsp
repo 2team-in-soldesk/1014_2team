@@ -81,6 +81,17 @@ form>#myinfo_update {
 }
 li{
 	margin-bottom:4%;
+	
+}
+
+#hr{
+	border-bottom: 2.5px solid orange;
+	margin-bottom: 3%;
+}
+li img {
+	width: 15%;
+	height: 15%;
+	border-radius: 50%;
 }
 
 </style>
@@ -120,7 +131,7 @@ li{
         <!--후기 미리보기 4개만 띄움-->
         <c:forEach var="my" items="${li }" begin="0" end="3">
         
-            <li><img src="${root }images/${my.t_com_profileimg }.png" >${my.t_user_id}
+            <li id="li"><img src="${root }images/${my.t_com_profileimg }.png" >${my.t_user_id}
               <!-- 하이퍼 링크로 클릭하면 해당 화장실 페이지로 이동하게 함 -->
               <span>|&nbsp; ${my.t_com_date } &nbsp; |&nbsp; 내가 준 별점 ${my.t_com_score } </span>
               
@@ -131,8 +142,9 @@ li{
              </div>
 
                 </li>
+                <hr id="hr">
          </c:forEach>   
-      
+      	
          
          </ul>
          <!--내 코멘트 리스트로 이동-->

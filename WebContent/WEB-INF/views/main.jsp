@@ -67,14 +67,26 @@
 #current-location-btn:focus {
 	outline: none;
 }
+.sidebar>form>#btn2 {
+	margin-top: 5%;
+	margin-left: 5%;
+	color: rgb(56,56,56);
+	background-color: rgb(74, 211, 188);
+	border: 1px solid rgb(63, 180, 176);
+	/* background-color:rgb(49, 191, 238);
+    border: 1px solid rgb(63, 180, 176); */
+	width: 30%;
+	height: 55px;
+}
+
 
 .sidebar>form>#btn3 {
 	margin-top: 5%;
 	margin-left: 15%;
 	width: 30%;
 	height: 55px;
-	color: ivory;
-	background-color: darkturquoise;
+	color: rgb(56,56,56);
+	background-color: rgb(74, 211, 188);
 	border: 1px solid rgb(63, 180, 176);
 }
 
@@ -83,6 +95,14 @@
 	margin-left: 5%;
 	width: 30%;
 	height: 55px;
+}
+.footer-content{
+    height:60%;
+    float: left;
+    margin-right: 15%;
+    border-right: 5px solid white;
+    padding-top:5%;
+    padding-right:8%;
 }
 </style>
 </head>
@@ -239,8 +259,8 @@
 		new fullpage('#full-page',
 				{
 					licenseKey : '', //디폴트 값
-					sectionsColor : [ 'darkturquoise', 'darkturquoise', //배경색
-							'darkturquoise' ],
+					sectionsColor : [' rgb(74, 211, 188)','rgb(74, 211, 188)', //배경색
+							'rgb(74, 211, 188)' ],
 					navigation : true, //네비게이션 사용
 					navigationTooltips : [ 'Home', 'To Where', 'About Us' ], //사이드 툴팁 
 					scrollingSpeed : 1000, //스크롤 속도

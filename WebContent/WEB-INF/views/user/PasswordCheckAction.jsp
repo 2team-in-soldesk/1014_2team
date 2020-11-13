@@ -28,9 +28,18 @@
 input[type="text"], input[type="tel"], input[type="email"], input[type="password"] {
 	margin: -20% 0% 0% 5%;
 }
+
+#temp-pw{
+	margin-top: 10%;
+}
+#text{
+	margin-left: 30%;
+}
 </style>
 </head>
 <body>
+
+	<div id="temp-pw">
    <h1>임시비밀번호 확인</h1>
    <hr>
    <form action="${root }user/passwordcheck2" method="post">
@@ -52,5 +61,6 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="password
          <input type="button" onclick="location.href='${root}main'" value="취소">
       </div>
    </form>
+      </div>
 </body>
 </html>

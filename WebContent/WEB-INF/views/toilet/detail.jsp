@@ -168,6 +168,15 @@ form img{
 	width: 4%;
 	margin-right: 2%;
 }
+#review_list {
+   width:75%;
+   margin:5% 0% 4% 13%;
+   padding-top:2%;
+   border-top: 1.5px solid rgb(230, 230, 217);
+}
+
+
+
 </style>
 </head>
 <!-- 상단 지도  -->
@@ -378,7 +387,7 @@ form img{
    <div id="review_list">
       <h1>후기 review</h1>
       <div>
-         <ul>
+         <ul id="ul">
          	<c:forEach var="c" items="${li }" begin="0" end="1">
             <li>
             <img id="profile-pic" src="${root }images/${c.t_com_profileimg }.png">${c.t_user_id } 
@@ -393,6 +402,7 @@ form img{
             </li>
             </c:forEach>
          </ul>
+        
          <ul>
          	<c:forEach var="c" items="${li }" begin="2" end="3">
             <li>
@@ -408,6 +418,7 @@ form img{
             </li>
             </c:forEach>
          </ul>
+        
       </div>
    </div>
    

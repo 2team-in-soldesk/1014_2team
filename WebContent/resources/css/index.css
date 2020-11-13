@@ -102,7 +102,7 @@ input[id="menuicon"]:checked + label {
     margin-top:5%;
     margin-left:5%;
     color: ivory;
-    background-color: darkturquoise;
+    background-color: rgb(74, 211, 188);
     border:1px solid rgb(63, 180, 176);
     /* background-color:rgb(49, 191, 238);
     border: 1px solid rgb(63, 180, 176); */

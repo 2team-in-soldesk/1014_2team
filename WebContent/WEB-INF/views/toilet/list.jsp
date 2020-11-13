@@ -30,6 +30,12 @@
 			background-image: url('${root}/images/화장실1.png');
 			background-position-y: 35%;
 		}
+		body{
+		    margin: 0 auto;
+		    width:100%; height:100%;
+		    font-family:'Courier New', Courier, monospace !important;
+		    background-color: mintcream !important;
+		}
 		#magnifier {
     		background: url("${root}images/search2.png") no-repeat;
     		background-size: 60%;
@@ -46,6 +52,30 @@
     	#btnc {
     	border:1px solid rgb(128, 128, 128);
     	}
+    	#good{
+    		background: lemonchiffon;
+    		color: black;
+    		font-size: 1.2em;
+    		padding: 1%;
+    		border-radius: 5px;
+    	}
+    	.addr{
+    		background-color: rgb(74, 211, 188);
+    	}
+    	
+		#addr1{
+			font-size: 1.8em;
+		}
+		#addr2{
+			font-size: 1.3em;
+		}
+		
+		#btnc{
+			background: rgb(206, 243, 242);
+		    border: 1px solid rgb(170, 173, 173) ;
+		}
+		
+	
 	</style>
 </head>
 <body bgcolor="mintcream">
@@ -70,7 +100,7 @@
     </header>
     
     <!-- 지역 -->
-    <p id="locallist">${searchKey } <img src="${root}images/toilet.png" id="man-woman">검색결과</p>
+    <p id="locallist">${searchKey } <img src="${root}images/toilet.png" id="man-woman">&nbsp;검색결과</p>
     
     <!-- 체크박스 -->
 	<form action="${root }toilet/list" method="get">
@@ -101,7 +131,7 @@
 				<div class="addr">
 					<p id="addr1">${t.t_name}</p>
 					<p id="addr2">${t.t_nm_name }</p>
-					<p id="good">댓글 ${t.t_user_count } | 총 별점 ★ ${t.t_com_score }</p>
+					<span id="good">댓글 ${t.t_user_count } | 총 별점 ★ ${t.t_com_score }</span>
 				</div>
 			</a>
 			<br>
@@ -117,7 +147,7 @@
 						<div class="addr">
 							<p id="addr1">${t.t_name}</p>
 							<p id="addr2">${t.t_nm_name }</p>
-								<p id="good">댓글 ${t.t_user_count } | 총 별점 ★ ${t.t_com_score }</p>
+							<span id="good">댓글 ${t.t_user_count } | 총 별점 ★ ${t.t_com_score }</span>
 						</div>
 					</a>
 					<br>
@@ -135,7 +165,7 @@
 						<div class="addr">
 							<p id="addr1">${t.t_name}</p>
 							<p id="addr2">${t.t_nm_name }</p>
-							<p id="good">댓글 ${t.t_user_count } | 총 별점 ★ ${t.t_com_score }</p>
+							<span id="good">댓글 ${t.t_user_count } | 총 별점 ★ ${t.t_com_score }</span>
 						</div>
 					</a>
 					<br>
@@ -153,7 +183,7 @@
 						<div class="addr">
 							<p id="addr1">${t.t_name}</p>
 							<p id="addr2">${t.t_nm_name }</p>
-							<p id="good">댓글 ${t.t_user_count } | 총 별점 ★ ${t.t_com_score }</p>
+						<span id="good">댓글 ${t.t_user_count } | 총 별점 ★ ${t.t_com_score }</span>
 						</div>
 					</a>
 					<br>
@@ -171,7 +201,7 @@
 						<div class="addr">
 							<p id="addr1">${t.t_name}</p>
 							<p id="addr2">${t.t_nm_name }</p>
-							<p id="good">댓글 ${t.t_user_count } | 총 별점 ★ ${t.t_com_score }</p>
+						<span id="good">댓글 ${t.t_user_count } | 총 별점 ★ ${t.t_com_score }</span>
 						</div>
 					</a>
 					<br>
@@ -189,7 +219,7 @@
 						<div class="addr">
 							<p id="addr1">${t.t_name}</p>
 							<p id="addr2">${t.t_nm_name }</p>
-						<p id="good">댓글 ${t.t_user_count } | 총 별점 ★ ${t.t_com_score }</p>
+						<span id="good">댓글 ${t.t_user_count } | 총 별점 ★ ${t.t_com_score }</span>
 						</div> 
 					</a>
 					<br>
@@ -207,7 +237,7 @@
 						<div class="addr">
 							<p id="addr1">${t.t_name}</p>
 							<p id="addr2">${t.t_nm_name }</p>
-							<p id="good">댓글 ${t.t_user_count } | 총 별점 ★ ${t.t_com_score }</p>
+							<span id="good">댓글 ${t.t_user_count } | 총 별점 ★ ${t.t_com_score }</span>
 						</div>
 					</a>
 					<br>
@@ -225,7 +255,7 @@
 						<div class="addr">
 							<p id="addr1">${t.t_name}</p>
 							<p id="addr2">${t.t_nm_name }</p>
-							<p id="good">댓글 ${t.t_user_count } | 총 별점 ★ ${t.t_com_score }</p>
+						<span id="good">댓글 ${t.t_user_count } | 총 별점 ★ ${t.t_com_score }</span>
 						</div>
 					</a>
 					<br>

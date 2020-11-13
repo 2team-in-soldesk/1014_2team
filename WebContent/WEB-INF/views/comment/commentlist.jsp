@@ -28,8 +28,9 @@
 	crossorigin="anonymous"></script>
 
 <style type="text/css">
+
 #like-pic {
-	width: 4%;
+	width: 3%;
 	margin-right: 2%;
 }
 
@@ -68,12 +69,13 @@ ul {
 	 display: flex;
 	/* 세로 정렬  */
 	flex-direction: column; 
-	margin: 0% 0% 1.2% 28%;
+	margin: 0% 0% 1.2% 20%;
+	width: 80%;
 }
 #back{
 	border: 1px solid black;
 	text-indent: 30%;
-	margin: 10% 0% 0% 30%;
+	margin: 10% 0% 3% 25%;
 	background: rgb(43, 171, 180);
 	border: 2px solid rgb(43, 171, 180);
 	color: whitesmoke;
@@ -89,6 +91,25 @@ ul {
 	margin: 2% 0% 3% 38%;
 	font-size: 1.4em;
 }
+
+li{
+	width: 90%;
+}
+#profile-pic {
+	width: 15%;
+	height: 15%;
+	border-radius: 50%;
+	margin-right: 5%;
+}
+#buttons {
+	margin-left: 65%;
+}
+#hr{
+	border:2.4px solid orange;
+	width: 80%;
+	margin:0;
+}
+
 </style>
 
 </head>
@@ -116,8 +137,10 @@ ul {
 					<!-- comment-list -->
 					<img id="profile-pic"
 						src="${root}images/${c.t_com_profileimg }.png"
-						alt="${c.t_com_profileimg }">${c.t_user_id }
-            <span>|&nbsp; ${c.t_com_date }<span id="star-score">별점 수 <img id="like-pic" src="${root}images/star.png">${c.t_com_score }</span></span>
+						alt="${c.t_com_profileimg }">
+						<span>${c.t_user_id }
+            |&nbsp; ${c.t_com_date } |&nbsp; 별점 수 <img id="like-pic" src="${root}images/star.png">${c.t_com_score }</span>
+            
 					<div id="comment">
 						<div>${c.t_com_com }</div>
 					</div>
@@ -131,7 +154,7 @@ ul {
 						</div>
 					</c:if>
 					<br>
-					<hr>
+					<hr id="hr">
 			</li>
 		</c:forEach>
 	</ul>

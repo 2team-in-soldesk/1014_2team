@@ -33,7 +33,7 @@ ul {
 	display: flex;
 	/* 가로 정렬  */
 	flex-direction: column;
-	margin: 0% 0% 1.2% 28%;
+	margin: 0% 0% 1.2% 20%;
 }
 
 li {

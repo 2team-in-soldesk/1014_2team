@@ -59,8 +59,12 @@ h1 {
 
 ul {
 	list-style-type: none;
-	margin: 30%;
+	margin: 25%;
 	font-size: 1.4em;
+	width: 80%;
+}
+li{
+	width: 75%;
 }
 
 #link {
@@ -95,7 +99,7 @@ ul {
 #back {
 	border: 1px solid black;
 	text-indent: 30%;
-	margin: 10% 0% 0% 60%;
+	margin: 10% 0% 0% 30%;
 	background: rgb(43, 171, 180);
 	border: 2px solid rgb(43, 171, 180);
 	color: whitesmoke;
@@ -106,6 +110,15 @@ ul {
 #copyright {
 	margin: 4% 0% 2% 40%;
 }
+#like-pic {
+	width: 3%;
+	margin-right: 2%;
+}
+#hr{
+	border: 2.5px solid orange;
+	margin-right: 35%;
+}
+
 </style>
 
 <script type="text/javascript">
@@ -150,7 +163,7 @@ window.onload=function(){
         
             <li><img id="profile-pic" src="${root }images/${my.t_com_profileimg }.png" >${my.t_user_id}
               <!-- 하이퍼 링크로 클릭하면 해당 화장실 페이지로 이동하게 함 -->
-              <span>|&nbsp; ${my.t_com_date }&nbsp;|&nbsp; 별점 수 ${my.t_com_score } </span>
+              <span id="span">|&nbsp; ${my.t_com_date }&nbsp;|&nbsp; 별점 수 <img id="like-pic" src="${root}images/star.png"> ${my.t_com_score } </span>
                 
                <div id="link">
 	              <a id="link_1" href="${root }toilet/detail?t_no=${my.t_no}&t_user_id=${my.t_user_id}">
@@ -158,6 +171,7 @@ window.onload=function(){
 	               </a>
                </div>
                 </li>
+                <hr id="hr">
          </c:forEach>   
          
         </ul>

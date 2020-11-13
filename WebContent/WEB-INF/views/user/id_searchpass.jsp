@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title>id_searchpass</title>
 
 <style type="text/css">
 
@@ -25,6 +25,7 @@ input[type="button"] {
     font-size: 1em;
     background: rgb(206, 243, 242);
     border: 1px solid rgb(170, 173, 173) ;
+    cursor: pointer;
 }
 
 h3 {
@@ -39,11 +40,13 @@ font-weight: bold;
 
 #find_idpw {
    margin: 0 outo;
-   margin-left: 21%;
+   margin: 10% 0% 10% 18%;
    padding-top: 2%;
    text-align:center;
    width: 65%;
+  
 }
+
 
 </style>
 

@@ -83,7 +83,7 @@ body {
             </tr>
             <tr>
                <td id="update_pw-check">새 비밀번호 확인</td>
-               <td><input id="my-pw-check" type="password" name="t_user_pw2" value="${ userbean.t_user_pw }"></td>
+               <td><input id="my-pw-check" type="password" name="t_user_pw2" value="${ userbean.t_user_pw}"></td>
             </tr>
             <tr>
                <td id="update_email">이메일</td>

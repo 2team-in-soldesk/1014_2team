@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Insert title here</title>
+<title>id_search</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -36,14 +36,14 @@
 		<hr>
 		<form action="${root }user/id_searchpass" method="post">
 			<div id="find_idpw">
-				<p id="text">찾으시려는 아이디의 이름과 전화번호를 입력해주세요.</p>
+				<p id="text">찾으시려는 아이디의 이름과 연락처를 입력해주세요.</p>
 				<table>
 					<tr>
 						<td><p id="name">이름</p></td>
 						<td><input type="text" name="t_user_name" value="${t_user_name }"></td>
 					</tr>
 					<tr>
-						<td><p id="tel">전화번호</p></td>
+						<td><p id="tel">연락처</p></td>
 						<td><input type="text" name="t_user_tel" value="${t_user_tel }"></td>
 					</tr>
 				</table>				
@@ -62,7 +62,7 @@
 		<hr>
 		<form action="${root }user/passwordcheck1" method="post">
 			<div id="find_idpw">
-				<p id="text">찾으시려는 패스워드의 아이디와 이메일를 입력해주세요.</p>
+				<p id="text">찾으시려는 패스워드의 아이디와 이메일을 입력해주세요.</p>
 				<table>
 					<tr>
 						<td><p id="id">아이디</p></td>
