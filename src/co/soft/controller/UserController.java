@@ -238,15 +238,26 @@ public class UserController {
 		request.setAttribute("t_user_pw", t_user_pw);
 		userbean = userservice.getOneUserbean(t_user_id);
 		request.setAttribute("userbean", userbean);
-
+		
 		String check_result = "";
 
 		if (pw_check_code.equals("delete")) {
 
 			if (userbean.getT_user_pw().equals(t_user_pw)) {
-				c_service.deleteCommentAll(t_user_id);
-				userservice.deleteUser(t_user_id);
+				// 내가 작성한 화장실 목록 리스트에 담음(탈퇴시 화장실별점 총점 업데이트 하기 위한 용도)
+				// 코멘트 삭제되기전에 먼저 실행해야 됨(삭제된 이후엔 코멘트가 없어 화장실정보 가져올 수 없음)
+				List<MyCommentList>li= userservice.getMyCommentList(t_user_id);
 				
+				// 내가 작성한 코멘트 모두 삭제
+				c_service.deleteCommentAll(t_user_id);
+				
+				// 화장실 별점총점, 댓글개수 업데이트
+				for(MyCommentList my:li) {
+					t_service.updateScore(my.getT_no());
+					t_service.updateUserCount(my.getT_no());
+				}
+				
+				userservice.deleteUser(t_user_id);
 				check_result = "user/pw_check_pass";
 			} else {
 				check_result = "user/pw_check_fail";
@@ -259,6 +270,7 @@ public class UserController {
 				check_result = "user/pw_check_fail";
 			}
 		}
+
 		return check_result;
 	}
 

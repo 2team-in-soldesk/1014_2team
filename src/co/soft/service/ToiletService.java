@@ -46,4 +46,13 @@ public class ToiletService {
 		return t_dao.getToiletBeanGps(gps);
 	}
 
+	///////////////////////////////
+	
+	public void updateScore(int t_no) {
+		t_dao.updateScore(t_no);
+	}
+	
+	public void updateUserCount(int t_no) {
+		t_dao.updateUserCount(t_no);
+	}
 }

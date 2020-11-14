@@ -44,4 +44,12 @@ public interface ToiletMapper {
 			+ "AS distance FROM toilet) DATA WHERE DATA.distance < 1 order by distance")
 	List<ToiletBean> getToiletBeanGps(Gpsbean gps);
 	
+	
+	////////////////////////////
+	
+	@Update("update toilet set t_com_score=(select sum(t_com_score) from t_comment where t_no=#{t_no}) where t_no=#{t_no}")
+	void updateScore(int t_no);
+	
+	@Update("update toilet set t_user_count=(select count(*) from t_comment where t_no=#{t_no}) where t_no=#{t_no}")
+	void updateUserCount(int t_no);
 }

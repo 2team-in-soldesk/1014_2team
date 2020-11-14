@@ -11,6 +11,7 @@ public class MyCommentList {
 	private String t_com_date;
 	private int t_com_score;
 	private String t_com_com;
+	
 	public int getT_no() {
 		return t_no;
 	}

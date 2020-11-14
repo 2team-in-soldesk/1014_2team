@@ -76,7 +76,6 @@
 <input type="hidden" name="t_com_score" id="t_com_score" value="${commentbean.t_com_score }">
 <input type="hidden" name="t_no" value="${t_no}">
 <input type="hidden" name="t_com_no" value="${commentbean.t_com_no }">
-<input type="hidden" name="addval" id="addval">
 
 </form>
 
@@ -85,9 +84,9 @@
 window.onload=function(){
     var star=document.getElementsByClassName("star");
    
-   if(${commentbean.t_com_score } >0){
+   if('${commentbean.t_com_score }' >0){
       for(var i=0;i<star.length;i++){
-           if(i<${commentbean.t_com_score}){
+           if(i<'${commentbean.t_com_score}'){
                star[i].innerHTML='★';
            }else{
                star[i].innerHTML='☆';
@@ -106,10 +105,6 @@ function star(a){
             star[i].innerHTML='☆';
         }
     }
-    
-    // addval=별점의 총점을 변경해줄 변수. 선택된 값-현재스코어
-    var addval=a-${commentbean.t_com_score };
-    document.getElementById("addval").value=addval;
     
     // commentbean에 스코어 저장
     document.getElementById("t_com_score").value=a;

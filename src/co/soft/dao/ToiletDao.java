@@ -45,4 +45,15 @@ public class ToiletDao {
 		return t_mapper.getToiletBeanGps(gps);
 	}
 	
+	
+	///////////////////////////////////////
+	
+	public void updateScore(int t_no) {
+		t_mapper.updateScore(t_no);
+	}
+	
+	public void updateUserCount(int t_no) {
+		t_mapper.updateUserCount(t_no);
+	}
+	
 }

@@ -11,20 +11,11 @@ import co.soft.beans.MyCommentList;
 import co.soft.beans.UserBean;
 
 public interface UserMapper {
-/*
-	// 회원가입
-	@Insert("insert into t_user values(#{t_user_name},#{t_user_id},#{t_user_pw},#{t_user_pw2},#{t_user_email},#{t_user_tel})")
-	public void insertUser(UserBean userbean);
-*/	
-	
-	
-	///////////////////////////////////////////////////////////////////
-	
+
+
 	// 회원가입
 	@Insert("insert into t_user values(#{t_user_name},#{t_user_id},#{t_user_pw},#{t_user_pw2},#{t_user_email}, #{t_user_email_hashcode} , '0' , #{t_user_tel})")
 	public void insertUser(UserBean userbean);
-
-	
 	
 	@Select("select t_user_tel from t_user")
 	public List<String> getTel();
